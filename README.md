@@ -25,6 +25,7 @@ pip install pexpect
 ### 比如:
 ```
 sshpass -p '123456' ssh root@192.168.56.102 "uptime"
+export SSHPASS='123456';sshpass -e ssh root@192.168.56.102 "uptime"
 sshpass -p '123456789' ssh -i ~/host_key root@192.168.56.102 "uptime"
 sshpass -p'123456' rsync -av /tmp/abc.txt -e \'ssh -i ~/host_key -p22\' root@192.168.56.102:/tmp
 ```

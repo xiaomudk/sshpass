@@ -21,8 +21,9 @@ def run_cmd(password,cmd):
     SSH_NEWKEY = r'Are you sure you want to continue connecting \(yes/no\)\?'
     KEY_PASSPHRASE = r'Enter passphrase for key.*:'
 
-    print 'cmd->',cmd
-    p = pexpect.spawn(cmd)
+    if password == None:
+        password = '\r\n'
+    p = pexpect.spawn('/bin/sh',['-c', cmd])
     index = p.expect([pexpect.EOF, pexpect.TIMEOUT, SSH_NEWKEY,'[Pp]assword: ',KEY_PASSPHRASE])
     if index == 0 or index == 1: # Timeout
         print 'ERROR!'
@@ -67,5 +68,5 @@ if __name__ == '__main__':
             usage()
             sys.exit(0)
 
-    run_cmd(str(password),' '.join(args))
+    run_cmd(password,' '.join(args))
 
