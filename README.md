@@ -20,7 +20,7 @@ pip install pexpect
 
 ```
 
-* 对于第1次连接主机出现的`Are you sure you want to continue connecting (yes/no)` 会自动输入`yes`。*
+*对于第1次连接主机出现的`Are you sure you want to continue connecting (yes/no)` 会自动输入`yes`。*
 
 ### 比如:
 ```
