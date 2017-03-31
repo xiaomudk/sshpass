@@ -10,7 +10,6 @@ easy_install pexpect
 pip install pexpect
 ```
 
-<br />
 **sshpass用法:**
 
 ```
